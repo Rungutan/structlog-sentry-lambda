@@ -16,7 +16,7 @@ from pathlib import Path
 import platform
 import tempfile
 
-import structlog_sentry
+from .structlog_sentry import *
 
 
 ROOT_DIR = Path("/tmp" if platform.system() == "Darwin" else tempfile.gettempdir())
