@@ -3,7 +3,7 @@ import setuptools
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
-current_version = str('1.1.0')
+current_version = str('1.1.1')
 
 setuptools.setup(
     name='structlog-sentry-lambda',

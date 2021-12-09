@@ -16,7 +16,7 @@ from pathlib import Path
 import platform
 import tempfile
 
-from .structlog_sentry import *
+from .structlog_sentry import SentryJsonProcessor
 
 
 ROOT_DIR = Path("/tmp" if platform.system() == "Darwin" else tempfile.gettempdir())
@@ -78,7 +78,7 @@ def get_logger(name: Optional[str] = None) -> Any:
 
 getLogger = get_logger
 """
-CamelCase alias for `structlog_sentry_logger.get_logger`.
+CamelCase alias for `structlog_sentry_lambda.get_logger`.
 """
 
 
@@ -288,13 +288,13 @@ def is_probably_in_cloud_environment() -> bool:
 
 
 _ENV_VARS_REQUIRED_BY_LIBRARY = {
-    get_handlers: "STRUCTLOG_SENTRY_LOGGER_LOCAL_DEVELOPMENT_LOGGING_MODE_ON",
-    is_cloud_logging_compatibility_mode_requested: "STRUCTLOG_SENTRY_LOGGER_CLOUD_LOGGING_COMPATIBILITY_MODE_ON",
+    get_handlers: "STRUCTLOG_SENTRY_LAMBDA_LOCAL_DEVELOPMENT_LOGGING_MODE_ON",
+    is_cloud_logging_compatibility_mode_requested: "STRUCTLOG_SENTRY_LAMBDA_CLOUD_LOGGING_COMPATIBILITY_MODE_ON",
     sentry_sdk.init: "SENTRY_DSN",
 }
 
 
-class SentryBreadcrumbJsonProcessor(structlog_sentry.SentryJsonProcessor):
+class SentryBreadcrumbJsonProcessor(SentryJsonProcessor):
 
     """
     Addresses: `SentryJsonProcessor breaks logging breadcrumbs #25`_
