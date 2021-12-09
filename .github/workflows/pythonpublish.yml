@@ -4,9 +4,9 @@
 name: Upload Python Package to pypy
 
 on:
-  release:
-    types:
-      - created
+  push:
+    tags:
+    - '*'
 
 jobs:
   deploy:
