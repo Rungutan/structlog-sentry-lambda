@@ -289,8 +289,7 @@ def is_probably_in_cloud_environment() -> bool:
 
 _ENV_VARS_REQUIRED_BY_LIBRARY = {
     get_handlers: "STRUCTLOG_SENTRY_LAMBDA_LOCAL_DEVELOPMENT_LOGGING_MODE_ON",
-    is_cloud_logging_compatibility_mode_requested: "STRUCTLOG_SENTRY_LAMBDA_CLOUD_LOGGING_COMPATIBILITY_MODE_ON",
-    sentry_sdk.init: "SENTRY_DSN",
+    is_cloud_logging_compatibility_mode_requested: "STRUCTLOG_SENTRY_LAMBDA_CLOUD_LOGGING_COMPATIBILITY_MODE_ON"
 }
 
 
@@ -364,6 +363,3 @@ def _load_library_specific_env_vars() -> None:
             os.environ[k] = v
 
 
-def _init_sentry() -> ContextManager[Any]:
-    # Note: if DSN isn't defined, will silently not transmit telemetry
-    return sentry_sdk.init()  # pylint: disable=abstract-class-instantiated

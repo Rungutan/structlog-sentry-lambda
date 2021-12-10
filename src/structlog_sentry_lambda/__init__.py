@@ -2,7 +2,6 @@
 from typing import List
 
 from ._config import (
-    _init_sentry,
     _load_library_specific_env_vars,
     get_config_dict,
     get_logger,
@@ -18,4 +17,3 @@ __all__: List[str] = [
 ]
 
 _load_library_specific_env_vars()
-_ = _init_sentry()
