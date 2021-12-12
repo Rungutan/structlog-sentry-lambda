@@ -3,14 +3,14 @@ import setuptools
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
-current_version = str('1.4.0')
+current_version = str('1.4.1')
 
 setuptools.setup(
     name='structlog-sentry-lambda',
 
     version=current_version,
     description='An AWS approved version of https://github.com/TeoZosa/structlog-sentry-logger '
-                'which is compatible to AWS Lambda as well as AWS Fargate',
+                'which is compatible with AWS Lambda as well as AWS Fargate',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/Rungutan/structlog-sentry-lambda',

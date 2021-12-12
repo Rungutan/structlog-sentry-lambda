@@ -38,7 +38,7 @@ sentry_sdk.init(
 
 filename = `libraries/logger.py`
 ```python
-
+import simplejson as json
 import structlog_sentry_lambda
 
 SENTRY_LOGGER = structlog_sentry_lambda.get_logger()
@@ -46,31 +46,31 @@ logger = SENTRY_LOGGER.bind()
 
 
 def debug(log_message):
-    logger.debug(log_message)
+    logger.debug(json.dumps(log_message, sort_keys=True, default=str))
 
 
 def error(log_message):
-    logger.error(log_message)
+    logger.error(json.dumps(log_message, sort_keys=True, default=str))
 
 
 def exception(log_message):
-    logger.exception(log_message)
+    logger.exception(json.dumps(log_message, sort_keys=True, default=str))
     
     
 def warning(log_message):
-    logger.warning(log_message)
+    logger.warning(json.dumps(log_message, sort_keys=True, default=str))
 
 
 def info(log_message):
-    logger.info(log_message)
+    logger.info(json.dumps(log_message, sort_keys=True, default=str))
 
 
 def main(log_message):
-    logger.info(log_message)
+    logger.info(json.dumps(log_message, sort_keys=True, default=str))
 
 
 def log(log_message):
-    logger.info(log_message)
+    logger.info(json.dumps(log_message, sort_keys=True, default=str))
 
 ```
 
