@@ -3,7 +3,7 @@ import setuptools
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
-current_version = str('1.4.1')
+current_version = str('1.4.2')
 
 setuptools.setup(
     name='structlog-sentry-lambda',
@@ -50,7 +50,6 @@ setuptools.setup(
         'License :: OSI Approved :: MIT License',
 
         # Supported Python versions
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -60,7 +59,9 @@ setuptools.setup(
     keywords='rungutan rungutan-cli rungutan_cli cli load testing load-testing load_testing stress'
              'stress-testing stress_testing api api-testing api_testing api_load_testing api-load-testing'
              'api_stress_testing api-stress-testing performance performance-testing performance_testing'
-             'api-performance-testing api_performance_testing serverless workflow-testing workflow_testing',
+             'api-performance-testing api_performance_testing serverless workflow-testing workflow_testing'
+             'aws sentry aws-sdk aws_sdk awssdk sentry-sdk sentry_sdk sentry sdk structlog logging log logger'
+             'lambda fargate ecs console',
     python_requires='>=3.6',
     install_requires=['sentry-sdk', 'colorama', 'python-dotenv', 'structlog', 'orjson', 'rich'],
     extras_require={
